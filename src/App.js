@@ -31,7 +31,7 @@ class Provider extends Component {
   }
 }
 
-const Nav = () => <LoginForm />;
+const Nav = () => {};
 
 class LoginForm extends Component {
   state = {};
@@ -77,7 +77,7 @@ class App extends Component {
             <h1 className="App-title">Welcome to React</h1>
           </header>
           <div className="App-intro">
-            <Nav />
+            <LoginForm />
           </div>
         </div>
       </Provider>
@@ -85,4 +85,4 @@ class App extends Component {
   }
 }
 
-export default LoginForm;
+export default App;
