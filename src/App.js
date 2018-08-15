@@ -21,6 +21,7 @@ class Provider extends Component {
       <MyContext.Provider
         value={{
           viewer: this.state.viewer,
+          state: {},
           logIn: this.logIn,
           logOut: this.logOut
         }}
@@ -74,7 +75,13 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+            <MyContext.Consumer>
+              {({ viewer }) => (
+                <h1 className="App-title">
+                  {viewer ? `Welcome ${viewer}!` : "Log In Yo!"}
+                </h1>
+              )}
+            </MyContext.Consumer>
           </header>
           <div className="App-intro">
             <LoginForm />
